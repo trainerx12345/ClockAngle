@@ -17,12 +17,17 @@
                 {
                     double hourDeg = (intHour * 30) + (intMinute * 30 / 60);
                     double minuteDeg = (intMinute * 6);
-
                     double answer = Math.Abs(hourDeg - minuteDeg);
                     double answer_2 = answer;
 
                     if (answer > 180)
+                    {
+                        answer_2 = answer;
                         answer = 360 - answer;
+                    }
+                    else {
+                        answer_2 = 360 - answer;
+                    }
 
 
                     Console.WriteLine("Angle between both minute and hour is : {0}", answer);
@@ -38,11 +43,13 @@
                 else
                 {
                     Console.WriteLine("Invalid! Please input 1-60");
+                    Console.ReadLine();
                     return;
                 }
             }
             else {
                 Console.WriteLine("Invalid! Please input 1-12");
+                Console.ReadLine();
                 return;
             }
 
